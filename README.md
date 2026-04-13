@@ -2,6 +2,8 @@
 
 A lightweight macOS menu bar application that monitors running virtual machines (QEMU and VZ-based) and displays their count and details.
 
+![VM Monitor Screenshot](assets/SCR-20260413-kupd.png)
+
 ## Features
 
 - **Custom Menu Bar Icon**: Number displayed in a styled box that adapts to light/dark mode
