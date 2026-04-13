@@ -2,6 +2,8 @@
 
 A lightweight macOS menu bar application that monitors running virtual machines (QEMU and VZ-based) and displays their count and details.
 
+> ⚠️ **Disclaimer**: This app was vibecoded with AI assistance. I have no idea about the consequences of using it. Use at your own risk!
+
 ![VM Monitor Screenshot](assets/SCR-20260413-kupd.png)
 
 ## Features
