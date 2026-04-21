@@ -53,9 +53,27 @@ struct TestRunner {
 
         print("\nVMScanner.buildGrepPattern")
         let pattern = VMScanner.buildGrepPattern()
-        // qemu-system should appear only once even though UTM+QEMU both use it
         let qemuCount = pattern.components(separatedBy: "qemu-system").count - 1
         check("qemu-system appears once", "\(qemuCount)", "1")
+
+        // ── StatsProvider.parseStatsOutput ───────────────────────────────────────────
+
+        print("\nStatsProvider.parseStatsOutput")
+
+        let statsOutput = """
+          1234   8.2  1258496
+          5678   0.3   524288
+        """
+
+        let provider = StatsProvider()
+        let statsCache = provider.parseStatsOutput(statsOutput)
+
+        check("stats count",         "\(statsCache.count)",                   "2")
+        check("PID 1234 cpu",        statsCache["1234"]?.cpuString ?? "",     "8.2%")
+        check("PID 1234 mem",        statsCache["1234"]?.memoryString ?? "",  "1.2 GB")
+        check("PID 5678 cpu",        statsCache["5678"]?.cpuString ?? "",     "0.3%")
+        check("PID 5678 mem",        statsCache["5678"]?.memoryString ?? "",  "512 MB")
+        check("missing PID is nil",  "\(statsCache["9999"] == nil)",          "true")
 
         // ── Summary ───────────────────────────────────────────────────────────────────
 
