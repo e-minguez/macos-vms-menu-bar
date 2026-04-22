@@ -26,10 +26,33 @@ A lightweight macOS menu bar application that monitors running virtual machines 
 
 ## Requirements
 
-- macOS 13.0 or later
-- Xcode Command Line Tools (for Swift compiler)
+- macOS 13.0 or later (arm64 only)
+- Xcode Command Line Tools (for Swift compiler) — only needed if building from source
 
-## Building
+## Installation
+
+Download the latest release from the [Releases page](https://github.com/e-minguez/macos-vms-menu-bar/releases).
+
+1. Download `VMMenuBar-<version>-arm64.zip` and unzip it
+2. Move `VMMenuBar.app` to `/Applications`
+3. Open it:
+   ```bash
+   open /Applications/VMMenuBar.app
+   ```
+
+### macOS security warning
+
+Because the app is not notarized, macOS will block it on first launch. To allow it:
+
+**Option A — right-click workaround:**
+Right-click `VMMenuBar.app` → Open → Open (in the dialog)
+
+**Option B — remove the quarantine flag:**
+```bash
+xattr -d com.apple.quarantine /Applications/VMMenuBar.app
+```
+
+## Building from source
 
 1. Make the build script executable:
    ```bash
@@ -43,7 +66,7 @@ A lightweight macOS menu bar application that monitors running virtual machines 
 
 3. The app will be created in `build/VMMenuBar.app`
 
-## Running
+## Running from source
 
 ### Option 1: Run directly
 ```bash
