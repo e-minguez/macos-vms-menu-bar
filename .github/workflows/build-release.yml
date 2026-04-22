@@ -1,9 +1,8 @@
 name: Build Release
 
 on:
-  push:
-    tags:
-      - 'v*'
+  release:
+    types: [published]
 
 permissions:
   contents: write
@@ -21,9 +20,9 @@ jobs:
           ./build.sh
 
       - name: Zip app bundle
-        run: zip -r "VMMenuBar-${{ github.ref_name }}.zip" build/VMMenuBar.app
+        run: zip -r "VMMenuBar-${{ github.event.release.tag_name }}.zip" build/VMMenuBar.app
 
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: "VMMenuBar-${{ github.ref_name }}.zip"
+          files: "VMMenuBar-${{ github.event.release.tag_name }}.zip"
