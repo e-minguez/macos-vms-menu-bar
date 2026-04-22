@@ -57,6 +57,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: - Refresh
 
+    @objc func showAbout() {
+        NSApp.activate(ignoringOtherApps: true)
+        NSApp.orderFrontStandardAboutPanel(options: [.version: ""])
+    }
+
     @objc func refresh() {
         let vms = VMScanner.getRunningVMs()
         if showCPU || showMemory {
@@ -170,6 +175,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(refreshItem)
 
         menu.addItem(.separator())
+        let aboutItem = NSMenuItem(title: "About", action: #selector(showAbout), keyEquivalent: "")
+        aboutItem.target = self
+        aboutItem.image = NSImage(systemSymbolName: "info.circle", accessibilityDescription: "About")
+        menu.addItem(aboutItem)
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
 
         return menu
