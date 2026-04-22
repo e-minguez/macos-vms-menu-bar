@@ -1,0 +1,29 @@
+name: Build Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build app
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Zip app bundle
+        run: zip -r "VMMenuBar-${{ github.ref_name }}.zip" build/VMMenuBar.app
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "VMMenuBar-${{ github.ref_name }}.zip"
