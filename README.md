@@ -1,6 +1,17 @@
-# VM Monitor - macOS Menu Bar App
+<div align="center">
+  <img src="icon.png" alt="VM Monitor icon" width="128" height="128" />
 
-A lightweight macOS menu bar application that monitors running virtual machines (QEMU and VZ-based) and displays their count and details.
+  # VM Monitor
+
+  A lightweight macOS menu bar app that monitors running virtual machines (QEMU and VZ-based) and displays their count and details.
+
+  [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+  [![Platform](https://img.shields.io/badge/platform-macOS%2013%2B-lightgrey.svg)](https://github.com/e-minguez/macos-vms-menu-bar/releases)
+  [![Architecture](https://img.shields.io/badge/arch-arm64-orange.svg)](https://github.com/e-minguez/macos-vms-menu-bar/releases)
+  [![Release](https://img.shields.io/github/v/release/e-minguez/macos-vms-menu-bar)](https://github.com/e-minguez/macos-vms-menu-bar/releases/latest)
+</div>
+
+---
 
 > ⚠️ **Disclaimer**: This app was vibecoded with AI assistance. I have no idea about the consequences of using it. Use at your own risk!
 

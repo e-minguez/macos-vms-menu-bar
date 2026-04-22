@@ -28,6 +28,7 @@ if [ $? -ne 0 ]; then
 fi
 
 cp Info.plist "$APP_DIR/Contents/Info.plist"
+cp AppIcon.icns "$APP_DIR/Contents/Resources/AppIcon.icns"
 
 echo "Build complete! App created at: $APP_DIR"
 echo ""
