@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/e-minguez/macos-vms-menu-bar/compare/v0.2.0...v0.3.0) (2026-04-22)
+
+
+### Features
+
+* add About panel with version, GitHub link, and license ([400e282](https://github.com/e-minguez/macos-vms-menu-bar/commit/400e282cb3d4a30d190d913240ae43f542ef8be6))
+
 ## [0.2.0](https://github.com/e-minguez/macos-vms-menu-bar/compare/v0.1.0...v0.2.0) (2026-04-22)
 
 
