@@ -1,5 +1,37 @@
 # VM Detection Agents
 
+## Commit Message Convention
+
+All commits **must** follow the [Conventional Commits](https://www.conventionalcommits.org/) format, which is required by release-please to automate versioning and changelog generation:
+
+```
+<type>: <short description>
+```
+
+Common types:
+| Type | When to use | Version bump |
+|------|-------------|--------------|
+| `feat` | New feature or capability | minor (0.x.0) |
+| `fix` | Bug fix | patch (0.0.x) |
+| `chore` | Maintenance, deps, config | none |
+| `docs` | Documentation only | none |
+| `refactor` | Code change, no behavior change | none |
+
+Add `!` after the type (e.g. `feat!:`) or a `BREAKING CHANGE:` footer for a major bump.
+
+**Examples:**
+```
+feat: add About panel with version, GitHub link, and license
+fix: correct VM name extraction for Lima instances
+chore: update build script
+docs: document new detection agent
+feat!: replace menu with native SwiftUI window
+```
+
+Commits that don't follow this format will be ignored by release-please and won't trigger a release.
+
+
+
 This document explains how the VM Menu Bar app detects and identifies virtual machines running on macOS.
 
 ## Architecture
